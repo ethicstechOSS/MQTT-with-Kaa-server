@@ -1,0 +1,16 @@
+{
+    "namespace": "org.kaaproject.kaa.server.appenders.pahomqtt.config.gen",
+    "type": "record",
+    "name": "PahoMqttConfig",
+    "fields": [
+    		{"name": "host", "displayName": "Broker Host", "by_default": "localhost", "type": "string"},
+            {"name": "port", "displayName": "Broker Port", "by_default": 1883, "type": "int"},
+            {"name": "ssl", "displayName": "Use SSL", "by_default": "false", "type": "boolean"},
+            {"name": "verifySslCert", "displayName": "Validate SSL Certificate", "by_default": "false", "type": "boolean"},
+            {"name": "username", "displayName": "Username", "type": ["string", "null"]},
+            {"name": "password", "displayName": "Password", "inputType": "password", "type": ["string", "null"]},
+            {"name": "qos", "displayName": "Qos", "maxLength": 10, "by_default": 3, "type": "int"},
+	    	{"name": "clientId", "displayName": "Client Id", "maxLength": 400, "by_default": "DefaultClient-ID", "type": "string"},
+	    	{"name": "mqtttopic", "displayName": "Mqtt Topic", "maxLength": 400, "by_default": "home/kaa/topic", "type": "string"}
+    ]
+}
