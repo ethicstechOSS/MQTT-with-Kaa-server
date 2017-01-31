@@ -17,13 +17,15 @@ We are here using MQTT at our dashboard side to exchange the datas between the d
 
 NOTE : We tried the below steps on Ubuntu 16.04, 64bit version. Kaa server : 0.9.0
 
-Open terminal, do an update and then install mosquitto dependencies:
+Open terminal, do an update and then install mosquitto dependencies. To install mosquitto you must create a mosquitto user.
+
+$sudo adduser mosquitto
 
 $sudo apt-get update
 
 $sudo apt-get install build-essential libwrap0-dev libssl-dev libc-ares-dev uuid-dev xsltproc
 
-$sudo cd /home/USER_NAME
+$sudo cd /home/mosquitto
 
 $sudo wget http://mosquitto.org/files/source/mosquitto-1.4.8.tar.gz
 
@@ -41,6 +43,10 @@ $sudo make install
 2.Setup Mosquitto
 
 Create a mosquitto user/password: the command below will create a user owntracks, you can change
+
+$sudomkdir /var/lib/mosquitto/
+
+$sudo chown mosquitto:mosquitto /var/lib/mosquitto/ -R
 
 $sudo mosquitto_passwd -c /etc/mosquitto/pwfile YOUR_MOSQUITTO_USER_NAME
 
@@ -124,7 +130,8 @@ Start Mosquitto server by using the following command:
 
 $sudo service mosquitto srart
 
-Now you have a Mosquitto broker working on your server. 
+Now you have a Mosquitto broker working on your server. For any further queries in the setup processof mosquitto refer the link: https://www.digitalocean.com/community/questions/how-to-setup-a-mosquitto-mqtt-server-and-receive-data-from-owntracks
+
 
 4.Paho MQTT Broker appender configuration on kaa server version 0.9.0. 
 
