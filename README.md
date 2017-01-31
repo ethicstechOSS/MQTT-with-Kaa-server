@@ -5,13 +5,13 @@ What is MQTT?
 
 MQTT is a publish/subscribe, extremely simple and lightweight messaging protocol, designed for constrained devices and low-bandwidth, high-latency or unreliable networks. Since it is perfectly suitable for IOT/M2M communication, we opted to use MQTT. Moreover, we are also using it as communication channel between Kaa server and Dashboard.
 
-For more details about MQTT, Kindly refer http://http://mqtt.org/
+For more details about MQTT, Kindly refer http://mqtt.org/
 
 How the MQTT communicate with Kaa server and external application?
 
 https://github.com/ethicstechOSS/MQTT-with-Kaa-server/tree/ethicstechOSS-images/mqtt_kaa.jpg
 
-We are here using MQTT at dashboard side to exchange the datas between the dashboard application and Kaa server. Kaa server has log appenders such as MongoDB, Cassandra and other some databases. If we are using a dashboard, we need to stream the data directly to the dashboard which will cause  more performance overhead in the databases. So we are using this MQTT protocol to append our logs to the MQTT server which can be subscribed and streaming data can be displayed. Since MQTT is open source, we opted to use it. 
+We are here using MQTT at our dashboard side to exchange the datas between the dashboard application and Kaa server. Kaa server has log appenders such as MongoDB, Cassandra and other some databases. If we are using a dashboard, we need to stream the data directly to the dashboard which will cause  more performance overhead in the databases. So we are using this MQTT protocol to append our logs to the MQTT server which can be subscribed and streaming data can be displayed. Since MQTT is open source, we opted to use it. 
 
 1.How to compile the source
 
@@ -134,13 +134,13 @@ Install git, maven and clone the source code from the repository.
 
 $sudo apt-get install git maven 
 
-$git clone <TODO REPLACE WITH GIT URL> 
+$git clone https://github.com/ethicstechOSS/MQTT-with-Kaa-server.git 
 
 $cd 
 
 $mvn clean install
 
-After the successful build, you will get the JAR file at /target/pahomqtt-appender-0.9.0.jar. The JAR file also uploaded on our repository. 
+After the successful build, you will get the JAR file at /target/pahomqtt-appender-0.9.0.jar. The compiled JAR file also availale on our repository. 
 
 5.Install log appender in kaa server
 
